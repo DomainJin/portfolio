@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>CV — Đỗ Minh Chính</title>
+<style>
+  @page { size: A4; margin: 12mm 14mm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 10.2pt; line-height: 1.45; color: #1a1a1a; margin: 0;
+    max-width: 190mm; margin-inline: auto; padding: 10mm 0;
+  }
+  h1 { font-size: 21pt; margin: 0; letter-spacing: -0.4px; }
+  .role { font-size: 11.5pt; color: #1d4ed8; margin: 2px 0 6px; font-weight: 600; }
+  .contact { font-size: 9.3pt; color: #444; }
+  .contact span::after { content: "  ·  "; color: #bbb; }
+  .contact span:last-child::after { content: ""; }
+  a { color: #1d4ed8; text-decoration: none; }
+  h2 {
+    font-size: 10.5pt; text-transform: uppercase; letter-spacing: 1px;
+    border-bottom: 1.5px solid #1d4ed8; padding-bottom: 3px;
+    margin: 15px 0 8px;
+  }
+  .sum { margin: 10px 0 0; }
+  .row { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+  .row h3 { font-size: 10.4pt; margin: 0; }
+  .when { font-size: 9pt; color: #666; white-space: nowrap; }
+  .org { color: #1d4ed8; font-weight: 600; }
+  .item { margin-bottom: 9px; page-break-inside: avoid; }
+  ul { margin: 4px 0 0; padding-left: 16px; }
+  li { margin-bottom: 2px; }
+  .skills { display: grid; grid-template-columns: 42mm 1fr; gap: 3px 10px; }
+  .skills dt { font-weight: 600; }
+  .skills dd { margin: 0; }
+  .tech { font-size: 9.2pt; color: #555; margin-top: 3px; }
+  .tech b { color: #333; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<h1>Đỗ Minh Chính</h1>
+<p class="role">Kỹ sư Firmware &amp; Phần cứng — Embedded / IoT</p>
+<p class="contact">
+  <span>15/09/2002</span>
+  <span>Nhà Bè, TP. Hồ Chí Minh</span>
+  <span>0972 169 271</span>
+  <span><a href="mailto:minhchinh290@gmail.com">minhchinh290@gmail.com</a></span>
+  <span><a href="https://github.com/DomainJin">github.com/DomainJin</a></span>
+</p>
+
+<h2>Tóm tắt</h2>
+<p class="sum">
+  Kỹ sư Điều khiển &amp; Tự động hóa, hiện làm tại phòng R&amp;D của VisionX Interactive.
+  Làm trọn vòng đời sản phẩm điện tử: đọc yêu cầu → thiết kế schematic và layout PCB →
+  viết firmware → đo kiểm, debug → ra sản phẩm. Có nền C/C++ trên ESP32, STM32, PIC;
+  quen I2C, SPI, UART, OneWire, RS485 và các giao thức IoT. Ngoài firmware còn xây dựng
+  được ứng dụng web hoàn chỉnh cho sản phẩm.
+</p>
+
+<h2>Kỹ năng</h2>
+<dl class="skills">
+  <dt>Ngôn ngữ</dt><dd>C, C++, Python, TypeScript</dd>
+  <dt>Vi điều khiển</dt><dd>ESP32 / ESP32-S3, ESP8266, STM32, PIC16F877A, Raspberry Pi, Arduino</dd>
+  <dt>Giao tiếp</dt><dd>I2C, SPI, UART, OneWire, Modbus RS485, Wi-Fi, MQTT, TCP/IP, HTTP</dd>
+  <dt>Điều khiển</dt><dd>PID, PWM, ADC, đọc encoder, driver động cơ, cảm biến nhiệt độ</dd>
+  <dt>Phần cứng / PCB</dt><dd>EasyEDA (schematic, layout, DRC, 3D), đọc datasheet, opto cách ly,
+      mạch nguồn, phân tách analog – power – digital, hàn mạch, đo kiểm &amp; debug bo mạch</dd>
+  <dt>Xử lý tín hiệu / AI</dt><dd>OpenCV, YOLO (Ultralytics), TensorFlow</dd>
+  <dt>Công cụ</dt><dd>Git / GitHub, Docker, PyQt6, React, Node.js</dd>
+</dl>
+
+<h2>Kinh nghiệm</h2>
+
+<div class="item">
+  <div class="row">
+    <h3>Kỹ sư Điện tử / IoT — Phòng R&amp;D · <span class="org">VisionX Interactive</span></h3>
+    <span class="when">10/2025 – nay</span>
+  </div>
+  <ul>
+    <li>Nghiên cứu, thiết kế, sản xuất và test bo mạch cơ điện tử cho sản phẩm tương tác:
+        schematic → layout PCB → DRC → dựng 3D → theo dõi tới khâu gia công.</li>
+    <li>Thiết kế bo điều khiển Robot Mecanum trên nền ESP32-S3: 5 kênh driver động cơ có
+        encoder phản hồi, tầng opto cách ly, khối nguồn lọc nhiều tầng.</li>
+    <li>Thiết kế loạt bo LED cho sản phẩm trưng bày: LED Cube kèm mảng cảm biến hồng ngoại,
+        LED Curtain, LED Fan, bo driver dòng không đổi dùng PT4115.</li>
+    <li>Lập trình nhúng cho firmware điều khiển, tích hợp giao tiếp có dây / không dây giữa
+        thiết bị và ứng dụng.</li>
+    <li>Khắc phục lỗi bo mạch trong sản xuất và trước khi bàn giao.</li>
+  </ul>
+</div>
+
+<div class="item">
+  <div class="row">
+    <h3>Hardware Part-time · <span class="org">ITR VN</span></h3>
+    <span class="when">01/2025 – 09/2025</span>
+  </div>
+  <ul>
+    <li>Lắp ráp và kiểm tra chức năng thiết bị y tế trước khi bàn giao — môi trường yêu cầu
+        độ tin cậy cao, sai số không được chấp nhận.</li>
+  </ul>
+</div>
+
+<div class="item">
+  <div class="row">
+    <h3>Electronic Part-time · <span class="org">CTCP Khoa học Kỹ thuật Phương Hải</span></h3>
+    <span class="when">06/2024 – 08/2024</span>
+  </div>
+  <ul>
+    <li>Hàn mạch điện tử, đo kiểm và debug bo mạch trước khi xuất xưởng.</li>
+  </ul>
+</div>
+
+<h2>Dự án tiêu biểu</h2>
+
+<div class="item">
+  <div class="row">
+    <h3>Bo điều khiển Robot Mecanum — VisionX</h3>
+    <span class="when">2026</span>
+  </div>
+  <div>Bo điều khiển robot bánh Mecanum: ESP32-S3 trung tâm, 5 kênh driver động cơ (EN/PWM/DIR)
+    kèm ngõ vào encoder, tầng opto cách ly phần điều khiển khỏi phần công suất, khối nguồn riêng,
+    ngõ ra I2C/UART mở rộng. Schematic và layout PCB 2 lớp tự thiết kế, có DRC và dựng 3D trước khi gia công.</div>
+  <div class="tech"><b>Công nghệ:</b> EasyEDA, ESP32-S3, driver động cơ, encoder, opto cách ly</div>
+</div>
+
+<div class="item">
+  <div class="row">
+    <h3>Mô hình Tránh né Thụ động (Passive Avoidance Model)</h3>
+    <span class="when">01/2024 – 07/2024</span>
+  </div>
+  <div>Thiết bị thí nghiệm đo trí nhớ chuột, chạy liên tục nhiều giờ với khối điện giật AC
+    điều chỉnh được điện áp và dòng. Raspberry Pi 5 làm CPU chính chạy nhận diện bằng model YOLO
+    và sinh heatmap mật độ di chuyển; Arduino Uno làm slave qua Modbus RS485. Giao diện vận hành
+    PyQt6 kèm web app xem kết quả. <b>Giải Nhất NCKH sinh viên cấp trường.</b></div>
+  <div class="tech"><b>Công nghệ:</b> Raspberry Pi 5, YOLO, OpenCV, PyQt6, Modbus RS485, Arduino</div>
+</div>
+
+<div class="item">
+  <div class="row">
+    <h3>Điều khiển động cơ BLDC bằng thuật toán PID</h3>
+    <span class="when">09/2023 – 11/2023</span>
+  </div>
+  <div>Đồ án chuyên ngành: STM32 chạy vòng điều khiển PID và đọc phản hồi tốc độ, ESP32 giám sát;
+    giao tiếp I2C và UART, sử dụng ADC và PWM.</div>
+  <div class="tech"><b>Công nghệ:</b> STM32, ESP32, PID, I2C, UART, ADC, PWM</div>
+</div>
+
+<div class="item">
+  <div class="row">
+    <h3>Hệ thống đo và hiển thị nhiệt độ</h3>
+    <span class="when">2023</span>
+  </div>
+  <div>PIC16F877A đọc cảm biến DS18B20 qua giao tiếp OneWire, xử lý và hiển thị lên LED 7 đoạn.</div>
+  <div class="tech"><b>Công nghệ:</b> PIC16F877A, DS18B20, OneWire</div>
+</div>
+
+<div class="item">
+  <div class="row">
+    <h3>Robot dò line thi đấu Robotics</h3>
+    <span class="when">11/2023 – 12/2023</span>
+  </div>
+  <div>Thiết kế và thi đấu robot dò line: STM32 điều khiển, cảm biến BFD-1000, thuật toán PID
+    để bám line ổn định ở tốc độ cao.</div>
+  <div class="tech"><b>Công nghệ:</b> STM32, PID, BFD-1000</div>
+</div>
+
+<h2>Học vấn &amp; Chứng chỉ</h2>
+
+<div class="item">
+  <div class="row">
+    <h3>Đại học Tôn Đức Thắng — Kỹ thuật Điều khiển &amp; Tự động hóa</h3>
+    <span class="when">2020 – 2024</span>
+  </div>
+</div>
+
+<div class="item">
+  <div class="row">
+    <h3>Khóa Lập trình nhúng · <span class="org">IMIC Technology</span></h3>
+    <span class="when">07/2025 – 10/2025</span>
+  </div>
+  <ul>
+    <li>Embedded Systems and Internet of Things — 84/100, loại Khá.
+        Lập trình C/C++, STM32F411VET6 Discovery, ESP32; firmware điều khiển Digital I/O, ADC,
+        cảm biến, Wi-Fi; giao tiếp TCP/IP, UDP, HTTP, MQTT và tích hợp AWS IoT Core.</li>
+  </ul>
+</div>
+
+</body>
+</html>
