@@ -29,7 +29,10 @@ export function Projects() {
                     {p.name}
                   </Link>
                 </h3>
-                <span className="shrink-0 text-xs text-muted">{p.period}</span>
+                <span className="shrink-0 text-xs text-muted">
+                  {p.videos && <span className="mr-2 text-accent">▶ Video</span>}
+                  {p.period}
+                </span>
               </div>
 
               <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">

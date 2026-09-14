@@ -46,6 +46,7 @@
   <span>Nhà Bè, TP. Hồ Chí Minh</span>
   <span>0972 169 271</span>
   <span><a href="mailto:minhchinh290@gmail.com">minhchinh290@gmail.com</a></span>
+  <span><a href="https://portfolio.domainjin.io.vn">portfolio.domainjin.io.vn</a></span>
   <span><a href="https://github.com/DomainJin">github.com/DomainJin</a></span>
 </p>
 
@@ -61,11 +62,12 @@
 <h2>Kỹ năng</h2>
 <dl class="skills">
   <dt>Ngôn ngữ</dt><dd>C, C++, Python, TypeScript</dd>
-  <dt>Vi điều khiển</dt><dd>ESP32 / ESP32-S3, ESP8266, STM32, PIC16F877A, Raspberry Pi, Arduino</dd>
-  <dt>Giao tiếp</dt><dd>I2C, SPI, UART, OneWire, Modbus RS485, Wi-Fi, MQTT, TCP/IP, HTTP</dd>
-  <dt>Điều khiển</dt><dd>PID, PWM, ADC, đọc encoder, driver động cơ, cảm biến nhiệt độ</dd>
+  <dt>Vi điều khiển</dt><dd>ESP32 / ESP32-S3 (ESP-IDF, FreeRTOS, Arduino, PlatformIO), STM32, PIC16F877A, Raspberry Pi</dd>
+  <dt>Giao tiếp</dt><dd>I2C, SPI, UART, OneWire, Modbus RS485, BLE, Wi-Fi, Ethernet W5500, WebSocket, UDP/OSC, MQTT, AWS IoT Core</dd>
+  <dt>Điều khiển</dt><dd>PID + feedforward, ISR, PWM, ADC, encoder, động học omni/mecanum, IMU, van solenoid</dd>
+  <dt>Độ tin cậy</dt><dd>OTA dual-partition, task watchdog, unit test (Unity), test trên phần cứng thật, tối ưu RAM/Flash</dd>
   <dt>Phần cứng / PCB</dt><dd>EasyEDA (schematic, layout, DRC, 3D), đọc datasheet, opto cách ly,
-      mạch nguồn, phân tách analog – power – digital, hàn mạch, đo kiểm &amp; debug bo mạch</dd>
+      mạch nguồn, phân tách analog – power – digital, hàn mạch, đo kiểm &amp; debug bo mạch; Rhino 3D (xuất file CNC/laser)</dd>
   <dt>Xử lý tín hiệu / AI</dt><dd>OpenCV, YOLO (Ultralytics), TensorFlow</dd>
   <dt>Công cụ</dt><dd>Git / GitHub, Docker, PyQt6, React, Node.js</dd>
 </dl>
@@ -78,15 +80,15 @@
     <span class="when">10/2025 – nay</span>
   </div>
   <ul>
-    <li>Nghiên cứu, thiết kế, sản xuất và test bo mạch cơ điện tử cho sản phẩm tương tác:
-        schematic → layout PCB → DRC → dựng 3D → theo dõi tới khâu gia công.</li>
-    <li>Thiết kế bo điều khiển Robot Mecanum trên nền ESP32-S3: 5 kênh driver động cơ có
-        encoder phản hồi, tầng opto cách ly, khối nguồn lọc nhiều tầng.</li>
-    <li>Thiết kế loạt bo LED cho sản phẩm trưng bày: LED Cube kèm mảng cảm biến hồng ngoại,
-        LED Curtain, LED Fan, bo driver dòng không đổi dùng PT4115.</li>
-    <li>Lập trình nhúng cho firmware điều khiển, tích hợp giao tiếp có dây / không dây giữa
-        thiết bị và ứng dụng.</li>
-    <li>Khắc phục lỗi bo mạch trong sản xuất và trước khi bàn giao.</li>
+    <li>Firmware ESP32 cho màn nước solenoid chạy show SECC (2 dàn 4m): SPI ra chuỗi 74HC595, phát cue từ
+        SD card theo timestamp, WebSocket, OTA dual-partition, task watchdog, unit test logic trên PC.</li>
+    <li>Tối ưu firmware màn nước: Flash <b>85,2% → 45,1%</b>, RAM <b>34,0% → 29,3%</b>; phát hiện lỗi timeout
+        (hàm nhận giây thay vì ms) có thể chặn main loop ~16 phút khi mạng venue chặn cổng.</li>
+    <li>Firmware robot trưng bày Single Cube: encoder đọc bằng ISR, PID có feedforward, động học omni 3 bánh /
+        mecanum 4 bánh, MPU6050 và QMC5883L qua I2C, nhận lệnh UDP/OSC.</li>
+    <li>Thiết kế schematic &amp; PCB trên EasyEDA: bo chủ ESP32 có opto cách ly, bo Robot Mecanum 5 kênh động cơ
+        có encoder, loạt bo LED driver PT4115.</li>
+    <li>Dựng khung cơ khí trên Rhino, xuất file gia công CNC / laser; phát triển phần mềm sự kiện (check-in, quay số).</li>
   </ul>
 </div>
 
@@ -112,6 +114,38 @@
 </div>
 
 <h2>Dự án tiêu biểu</h2>
+
+<div class="item">
+  <div class="row">
+    <h3>Digital Waterfall — Firmware màn nước sự kiện · VisionX</h3>
+    <span class="when">2026</span>
+  </div>
+  <div>ESP32 điều khiển N van solenoid qua 74HC595 (SPI cứng 1MHz), số van suy động từ CONFIG frame.
+    Cue upload qua HTTP lên SD, phát theo timestamp và expose /time đồng bộ audio ngoài; điều khiển WebSocket.
+    OTA dual-partition cho giàn treo 12m, task watchdog, unit test Unity chạy trên PC, firmware test riêng cho SD
+    và ánh xạ van trên phần cứng thật.</div>
+  <div class="tech"><b>Công nghệ:</b> ESP32, C++, SPI, SD/FAT32, WebSocket, OTA, watchdog, Unity, W5500</div>
+</div>
+
+<div class="item">
+  <div class="row">
+    <h3>Single Cube — Robot trưng bày di động · VisionX</h3>
+    <span class="when">2025 – 2026</span>
+  </div>
+  <div>Firmware + PCB + khung cơ khí. Encoder đọc bằng ISR, PID feedforward giữ tốc độ, động học nghịch omni/mecanum,
+    IMU + la bàn qua I2C, lệnh qua UDP/OSC. Truy ra và sửa 3 lỗi trong chuỗi động học khiến robot sai vận tốc.</div>
+  <div class="tech"><b>Công nghệ:</b> ESP32, PID, ISR, I2C, MPU6050, UDP/OSC, EasyEDA, Rhino</div>
+</div>
+
+<div class="item">
+  <div class="row">
+    <h3>Robot Thám Hiểm — Đồ án cuối khóa IMIC (nhóm 4 người)</h3>
+    <span class="when">2025</span>
+  </div>
+  <div>ESP-IDF + FreeRTOS. Nhận cấu hình Wi-Fi và lệnh di chuyển qua BLE từ app Android, gửi dữ liệu cảm biến I2C
+    qua MQTT lên AWS IoT Core. Phụ trách driver động cơ và nhận lệnh BLE / Wi-Fi.</div>
+  <div class="tech"><b>Công nghệ:</b> ESP-IDF, FreeRTOS, BLE, MQTT, AWS IoT Core</div>
+</div>
 
 <div class="item">
   <div class="row">
@@ -153,16 +187,6 @@
   </div>
   <div>PIC16F877A đọc cảm biến DS18B20 qua giao tiếp OneWire, xử lý và hiển thị lên LED 7 đoạn.</div>
   <div class="tech"><b>Công nghệ:</b> PIC16F877A, DS18B20, OneWire</div>
-</div>
-
-<div class="item">
-  <div class="row">
-    <h3>Robot dò line thi đấu Robotics</h3>
-    <span class="when">11/2023 – 12/2023</span>
-  </div>
-  <div>Thiết kế và thi đấu robot dò line: STM32 điều khiển, cảm biến BFD-1000, thuật toán PID
-    để bám line ổn định ở tốc độ cao.</div>
-  <div class="tech"><b>Công nghệ:</b> STM32, PID, BFD-1000</div>
 </div>
 
 <h2>Học vấn &amp; Chứng chỉ</h2>

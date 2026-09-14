@@ -6,6 +6,7 @@ export type Profile = {
   email: string;
   avatar: string;
   cvUrl: string;
+  website?: string;
   socials: { label: string; href: string }[];
 };
 
@@ -27,6 +28,7 @@ export type Project = {
   role: string;
   period: string;
   image?: string;
+  videos?: { src: string; poster: string; portrait?: boolean }[];
   tech: string[];
   links: { demo?: string; source?: string };
   featured?: boolean;

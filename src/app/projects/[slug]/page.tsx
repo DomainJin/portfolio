@@ -53,6 +53,29 @@ export default async function ProjectPage({ params }: Params) {
         />
       )}
 
+      {project.videos && (
+        <div
+          className={`mt-6 grid gap-4 ${
+            project.videos.length > 1 && project.videos.every((v) => v.portrait) ? "sm:grid-cols-2" : ""
+          }`}
+        >
+          {project.videos.map((v) => (
+            <video
+              key={v.src}
+              src={v.src}
+              poster={v.poster}
+              controls
+              muted
+              playsInline
+              preload="none"
+              className={`rounded-xl border border-border bg-black ${
+                v.portrait ? "mx-auto max-h-[70vh] w-auto" : "aspect-video w-full"
+              }`}
+            />
+          ))}
+        </div>
+      )}
+
       <p className="mt-8 leading-relaxed text-muted">{project.description}</p>
 
       <div className="mt-8 flex flex-wrap gap-2">

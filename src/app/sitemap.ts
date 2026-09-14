@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { projects } from "@/data/projects";
 
-const baseUrl = "https://example.com";
+const baseUrl = "https://portfolio.domainjin.io.vn";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

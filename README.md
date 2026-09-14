@@ -24,13 +24,14 @@ Kiểu dữ liệu định nghĩa ở `src/data/types.ts`.
 
 ## Asset cần thay trong `public/`
 
-- `avatar.svg` → ảnh chân dung thật (vuông, ≥800px). Nhớ sửa `avatar` trong `profile.ts`.
+- `avatar.jpg` → ảnh chân dung (gốc ở `asset/personal/avatar.png`).
 - `cv.pdf` → hiện là bản CV cũ, cần thay bằng CV mới.
-- `certificates/iot-imic.pdf` → **39MB, quá nặng để deploy**. Cần nén hoặc thay bằng link verify online.
+- `certificates/iot-imic.pdf` → đã gỡ bản 39MB; cần thêm bản nén (<2MB) hoặc ảnh JPG.
+- `videos/` → video demo đã nén (H.264, không tiếng). Giữ mỗi file dưới ~10MB.
 - `projects/placeholder.svg` → ảnh từng dự án (tỷ lệ 16:9, ≥1200px).
 - `src/app/favicon.ico` → favicon riêng.
 
 ## Trước khi deploy
 
-1. Đổi `https://example.com` thành domain thật trong `src/app/layout.tsx` (`metadataBase`) và `src/app/sitemap.ts`.
+1. Domain: `https://portfolio.domainjin.io.vn` (đã cấu hình trong `layout.tsx` và `sitemap.ts`).
 2. Deploy lên Vercel: import repo → Next.js được nhận diện tự động.

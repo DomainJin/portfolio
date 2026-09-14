@@ -2,6 +2,39 @@ import type { Project } from "./types";
 
 export const projects: Project[] = [
   {
+    slug: "digital-waterfall",
+    name: "Digital Waterfall — Firmware màn nước",
+    tagline:
+      "Firmware ESP32 điều khiển màn nước solenoid cho sân khấu sự kiện, phát cue từ SD card đồng bộ timestamp.",
+    description:
+      "Firmware cho dàn màn nước tạo hình bằng van solenoid, chạy show SECC với 2 dàn 4m điều khiển độc lập qua LAN. ESP32 đẩy trạng thái N van qua chuỗi 74HC595 bằng SPI cứng 1MHz, số van suy động từ CONFIG frame thay vì hardcode. Cue được upload qua HTTP lên SD card (FAT32) rồi phát theo timestamp tương đối, expose /time để đồng bộ với nguồn audio bên ngoài; điều khiển real-time qua WebSocket binary, hỗ trợ Ethernet W5500. Firmware có task watchdog, OTA dual-partition (giàn treo 12m không cắm được USB), unit test logic thuần chạy trên PC bằng Unity, và firmware test riêng cho SD và ánh xạ van trên phần cứng thật. Khi rà soát đã phát hiện lỗi setTimeout() nhận giây thay vì mili-giây khiến main loop có thể bị chặn ~16 phút ở mạng chặn cổng; gỡ MQTT/NTP/BLE không cần thiết đưa Flash từ 85,2% xuống 45,1% và RAM từ 34,0% xuống 29,3%. Phần khung cơ khí thiết kế trên Rhino và xuất file gia công CNC / laser.",
+    role: "Firmware & cơ khí",
+    period: "2026",
+    image: "/projects/waterfall-rhino.png",
+    videos: [{ src: "/videos/digital-waterfall.mp4", poster: "/videos/digital-waterfall.jpg" }],
+    tech: ["ESP32", "C++", "SPI / 74HC595", "SD card", "WebSocket", "OTA", "Watchdog", "Unity test", "W5500", "Rhino"],
+    links: {},
+    featured: true,
+  },
+  {
+    slug: "single-cube",
+    name: "Single Cube — Robot trưng bày di động",
+    tagline:
+      "Robot omni 3 bánh / mecanum 4 bánh mang khối trưng bày, PID tốc độ từ encoder, điều khiển qua UDP/OSC.",
+    description:
+      "Hệ thống robot di động mang khối Cube trưng bày tương tác. Firmware ESP32 đọc encoder bằng ngắt (ISR), chạy vòng PID có feedforward giữ tốc độ từng động cơ, tính động học nghịch cho cấu hình omni 3 bánh và mecanum 4 bánh; đọc IMU MPU6050 và la bàn QMC5883L qua I2C, cảm biến IR, điều khiển LED NeoPixel, nhận lệnh qua UDP và OSC từ máy điều khiển. Khi robot không chạy đúng vận tốc, đã truy ra 3 lỗi trong chuỗi động học (bán kính robot sai hệ số, RPM tối đa không khớp thông số motor, ánh xạ tốc độ sang PWM) và sửa lại. Kèm bo mạch chủ ESP32 với tầng opto cách ly tự thiết kế, khung cơ khí dựng trên Rhino, và ứng dụng Python giám sát heartbeat nhiều thiết bị, nhận tín hiệu cảm ứng và liên kết với Resolume.",
+    role: "Firmware, PCB & ứng dụng điều khiển",
+    period: "2025 – 2026",
+    image: "/projects/single-cube-board.jpg",
+    videos: [
+      { src: "/videos/single-cube.mp4", poster: "/videos/single-cube.jpg", portrait: true },
+      { src: "/videos/single-cube-2.mp4", poster: "/videos/single-cube-2.jpg", portrait: true },
+    ],
+    tech: ["ESP32", "C++", "PID", "ISR / Encoder", "I2C", "MPU6050", "UDP / OSC", "Python", "Rhino"],
+    links: {},
+    featured: true,
+  },
+  {
     slug: "robot-mecanum-board",
     name: "Bo điều khiển Robot Mecanum",
     tagline:
@@ -25,6 +58,19 @@ export const projects: Project[] = [
     period: "09/2023 – 11/2023",
     image: "/projects/placeholder.svg",
     tech: ["STM32", "ESP32", "PID", "I2C", "UART", "PWM"],
+    links: {},
+  },
+  {
+    slug: "imic-explorer-robot",
+    name: "Robot Thám Hiểm — Đồ án cuối khóa IMIC",
+    tagline:
+      "Robot ESP32 điều khiển qua BLE từ app Android, gửi dữ liệu cảm biến lên AWS IoT Core.",
+    description:
+      "Đồ án nhóm 4 người, viết trên ESP-IDF với FreeRTOS. Robot nhận cấu hình Wi-Fi và lệnh di chuyển qua BLE từ ứng dụng Android, thu thập nhiệt độ, độ ẩm, ánh sáng và mức pin qua I2C, truyền dữ liệu qua MQTT lên AWS IoT Core có xác thực chứng chỉ, hiển thị trên dashboard. Phụ trách phần di chuyển: driver động cơ và nhận lệnh điều khiển qua BLE / Wi-Fi.",
+    role: "Firmware — di chuyển & BLE",
+    period: "2025",
+    image: "/projects/placeholder.svg",
+    tech: ["ESP-IDF", "FreeRTOS", "BLE", "MQTT", "AWS IoT Core", "I2C"],
     links: {},
   },
   {
@@ -112,6 +158,19 @@ export const projects: Project[] = [
     period: "2023",
     image: "/projects/placeholder.svg",
     tech: ["Raspberry Pi 3", "OpenCV", "TensorFlow"],
+    links: {},
+  },
+  {
+    slug: "checkin-system",
+    name: "Check-In System",
+    tagline:
+      "Hệ thống check-in sự kiện bằng máy quét mã USB, màn hình chào mừng real-time, đóng gói installer.",
+    description:
+      "Ứng dụng check-in cho sự kiện tại VisionX. Tự phân biệt máy quét mã với bàn phím dựa trên VID/PID và nhịp phím (WebHID), đồng bộ giữa màn quét và màn hình chào mừng qua BroadcastChannel và SSE, dữ liệu khách mời lấy từ Google Sheets. Có server dashboard quản lý nhiều máy, cơ chế license có thời hạn, và đóng gói thành bộ cài Windows bằng NSIS.",
+    role: "Developer",
+    period: "2026",
+    image: "/projects/placeholder.svg",
+    tech: ["Python", "WebHID", "SSE", "Google Apps Script", "NSIS"],
     links: {},
   },
   {
