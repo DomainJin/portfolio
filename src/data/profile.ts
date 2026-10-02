@@ -2,9 +2,9 @@ import type { Profile } from "./types";
 
 export const profile: Profile = {
   name: "Đỗ Minh Chính",
-  title: "Kỹ sư Firmware / IoT & Phần cứng",
+  title: "Kỹ sư Firmware / IoT — Phần mềm nhúng & Ứng dụng",
   summary:
-    "Kỹ sư Điều khiển & Tự động hóa, hiện làm tại phòng R&D của VisionX Interactive. Mạnh nhất ở firmware và IoT trên ESP32 / STM32, đồng thời tự thiết kế schematic, layout PCB và cơ khí cho chính sản phẩm mình viết firmware. Theo sản phẩm tới tận khâu gia công: hàn reflow, kiểm tra chức năng theo lô, truy lỗi bằng oscilloscope để tách lỗi thiết kế khỏi lỗi nhà máy.",
+    "Kỹ sư Điều khiển & Tự động hóa, hiện làm tại phòng R&D của VisionX Interactive. Mảng chính là firmware, IoT và phần mềm — làm nhanh nhờ nắm kiến trúc tổng thể, bám nguyên lý căn bản và tận dụng AI, luôn kiểm chứng lại bằng đo đạc trên thiết bị thật. Phần cứng là mảng đang phát triển: đã tự thiết kế và layout PCB cho sản phẩm chạy thật, lắp ráp, kiểm tra chức năng theo lô và truy lỗi bằng oscilloscope.",
   location: "Nhà Bè, TP. Hồ Chí Minh",
   email: "minhchinh290@gmail.com",
   avatar: "/avatar.jpg",

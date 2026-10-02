@@ -204,13 +204,22 @@ images: [
     slug: "imic-explorer-robot",
     name: "Robot Thám Hiểm — Đồ án cuối khóa IMIC",
     tagline:
-      "Robot ESP32 điều khiển qua BLE từ app Android, gửi dữ liệu cảm biến lên AWS IoT Core.",
+      "Robot ESP32 trên ESP-IDF: FreeRTOS đa task, kiến trúc phân lớp, BLE provisioning, telemetry lên AWS IoT Core, OTA.",
     description:
-      "Đồ án nhóm 4 người, viết trên ESP-IDF với FreeRTOS. Robot nhận cấu hình Wi-Fi và lệnh di chuyển qua BLE từ ứng dụng Android, thu thập nhiệt độ, độ ẩm, ánh sáng và mức pin qua I2C, truyền dữ liệu qua MQTT lên AWS IoT Core có xác thực chứng chỉ, hiển thị trên dashboard. Phụ trách phần di chuyển: driver động cơ và nhận lệnh điều khiển qua BLE / Wi-Fi.",
-    role: "Firmware — di chuyển & BLE",
+      "Đồ án cuối khóa, nhóm 4 người, viết bằng ESP-IDF thuần (không dùng Arduino framework). Hệ thống chạy 5 task FreeRTOS song song — đọc cảm biến, gửi telemetry, OTA, TCP client, UDP client — dùng mutex để bảo vệ bus I2C dùng chung giữa các task. Code tổ chức theo kiến trúc phân lớp: lớp driver cho từng cảm biến (HTU21D nhiệt-ẩm, BH1750 ánh sáng, MAX17043 pin, MPU6050 IMU) và driver động cơ, tách khỏi lớp middleware (i2c_bus, mqtt_manager, ota_manager, ble_manager) và lớp ứng dụng; mỗi module một cặp file .c/.h, chỉ expose public API qua header, đặt tên theo snake_case có tiền tố module. Toàn bộ hàm trả về esp_err_t, có xử lý lỗi, timeout và retry; log ra UART theo mức info / warning / error. Robot nhận cấu hình Wi-Fi và lệnh điều khiển qua BLE từ app Android, publish dữ liệu cảm biến định kỳ qua MQTT lên AWS IoT Core có xác thực chứng chỉ và nhận lệnh điều khiển từ xa; cập nhật firmware qua HTTPS OTA có cơ chế rollback. Phụ trách phần di chuyển (driver động cơ) và toàn bộ lớp BLE.",
+    role: "Firmware — di chuyển, BLE & tích hợp",
     period: "2025",
     image: "/projects/placeholder.svg",
-    tech: ["ESP-IDF", "FreeRTOS", "BLE", "MQTT", "AWS IoT Core", "I2C"],
+    tech: [
+      "ESP-IDF",
+      "FreeRTOS (task, mutex)",
+      "Kiến trúc phân lớp",
+      "BLE",
+      "MQTT",
+      "AWS IoT Core",
+      "HTTPS OTA",
+      "I2C",
+    ],
     links: {},
   },
   {

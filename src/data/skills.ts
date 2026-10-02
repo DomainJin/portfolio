@@ -2,7 +2,7 @@ export type SkillGroup = { group: string; items: string[] };
 
 export const skills: SkillGroup[] = [
   {
-    group: "Firmware & IoT",
+    group: "Firmware & IoT — mảng chính",
     items: [
       "C / C++",
       "ESP32 / ESP32-S3, STM32, PIC16F877A",
@@ -15,28 +15,46 @@ export const skills: SkillGroup[] = [
     ],
   },
   {
-    group: "Thiết kế phần cứng",
+    group: "Ứng dụng & Web",
     items: [
-      "EasyEDA (schematic, layout, DRC, 3D)",
-      "Đọc & tra datasheet",
-      "Chọn và thay thế linh kiện",
-      "Phân tách analog – power – digital",
-      "Mạch nguồn nhiều tầng lọc",
-      "Opto cách ly điều khiển / công suất",
-      "Driver động cơ, driver LED dòng không đổi",
-      "Thiết kế hướng tới sản xuất (DFM)",
+      "TypeScript, JavaScript, Python",
+      "React, Next.js, Vite",
+      "Node.js, Fastify, Flask",
+      "PyQt6 (app desktop)",
+      "WebSocket, SSE, REST",
+      "PostgreSQL, Redis",
+      "Docker, Nginx",
+      "Git / GitHub, Vitest",
     ],
   },
   {
-    group: "Sản xuất & kiểm thử bo mạch",
+    group: "Cách làm việc",
     items: [
-      "Hàn reflow nhiều vùng nhiệt",
-      "Hàn tay & sửa mạch",
+      "Dùng AI để tăng tốc viết code",
+      "Nắm kiến trúc tổng thể hệ thống trước khi code",
+      "Bám nguyên lý và cơ sở căn bản để kiểm chứng kết quả",
+      "Kiểm tra bằng dữ liệu thật: hexdump, serial log, đo trên thiết bị",
+      "Chia việc theo phase, refactor trước khi thêm tính năng",
+    ],
+  },
+  {
+    group: "Phần cứng — đang phát triển",
+    items: [
+      "EasyEDA: schematic, layout PCB 2 lớp, DRC, dựng 3D",
+      "Đọc & tra datasheet",
+      "Mạch nguồn, opto cách ly",
+      "Driver động cơ, driver LED dòng không đổi",
+      "Đọc sơ đồ: pull-up/down, chia áp",
+    ],
+  },
+  {
+    group: "Sản xuất & kiểm thử",
+    items: [
+      "Hàn reflow, hàn tay & sửa mạch",
       "Kiểm tra chức năng theo lô",
-      "Oscilloscope (dạng sóng, thời gian cạnh, chu kỳ)",
+      "Oscilloscope: dạng sóng, thời gian cạnh, chu kỳ",
       "Đồng hồ đo",
       "Truy lỗi bo mạch từ nhà máy",
-      "Tháo máy & phân tích bo có sẵn",
     ],
   },
   {
