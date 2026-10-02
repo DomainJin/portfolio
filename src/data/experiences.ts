@@ -3,20 +3,19 @@ import type { Experience } from "./types";
 export const experiences: Experience[] = [
   {
     company: "VisionX Interactive",
-    role: "Kỹ sư Điện tử / IoT — Phòng R&D",
+    role: "Kỹ sư Điện tử — Phòng R&D",
     start: "10/2025",
     end: "Hiện tại",
     location: "Hóc Môn, TP. Hồ Chí Minh",
     highlights: [
-      "Viết firmware ESP32 cho màn nước solenoid chạy show SECC (2 dàn 4m): SPI 74HC595, phát cue từ SD card theo timestamp, WebSocket, OTA dual-partition, task watchdog, unit test trên PC.",
-      "Tối ưu firmware màn nước: gỡ các module không cần cho show, đưa Flash từ 85,2% xuống 45,1% và RAM từ 34,0% xuống 29,3%; phát hiện lỗi timeout có thể chặn main loop ~16 phút.",
-      "Viết firmware robot trưng bày Single Cube: đọc encoder bằng ISR, PID có feedforward, động học omni 3 bánh / mecanum 4 bánh, IMU và la bàn qua I2C, điều khiển qua UDP/OSC.",
-      "Thiết kế schematic và PCB trên EasyEDA: bo chủ ESP32 có opto cách ly cho Cube, bo điều khiển Robot Mecanum 5 kênh động cơ, loạt bo LED dùng driver PT4115.",
-      "Dựng khung cơ khí trên Rhino và xuất file gia công CNC / laser cho sản phẩm.",
-      "Lắp ráp bo mạch bằng lò reflow, kiểm tra chức năng theo lô và dùng oscilloscope đo dạng sóng để truy lỗi bo chạy sai.",
-      "Phát triển phần mềm cho sự kiện: hệ thống check-in quét mã, quay số trúng thưởng, game đua vịt.",
+      "Thiết kế schematic và layout PCB trên EasyEDA cho sản phẩm trưng bày: bo chủ ESP32 có tầng opto cách ly, bo điều khiển robot 5 kênh động cơ có encoder, loạt bo LED dùng driver dòng không đổi PT4115.",
+      "Lắp ráp bo bằng lò reflow nhiều vùng nhiệt và kiểm tra chức năng theo lô trước khi đưa vào sản phẩm.",
+      "Truy lỗi bo mạch bằng oscilloscope và đồng hồ đo: đo dạng sóng, thời gian cạnh lên / xuống, chu kỳ xung để tách lỗi thiết kế khỏi lỗi gia công.",
+      "Phần lớn lỗi sản phẩm đến từ khâu gia công tại nhà máy chứ không phải từ bản thiết kế, nên tập trung vào kiểm tra hàng về, khoanh vùng lỗi theo lô và phản hồi lại nhà máy.",
+      "Dựng khung cơ khí trên Rhino và xuất file gia công CNC / laser, phối hợp bo mạch với kết cấu cơ khí của sản phẩm.",
+      "Viết firmware cho chính các bo mình thiết kế (ESP32, C/C++): điều khiển van, động cơ, LED; có OTA, watchdog và kiểm thử trên thiết bị thật.",
     ],
-    tech: ["ESP32", "C/C++", "SPI", "I2C", "PID", "OTA", "EasyEDA", "Rhino", "Python", "TypeScript"],
+    tech: ["EasyEDA", "Layout PCB", "Hàn reflow", "Oscilloscope", "Rhino", "ESP32", "C/C++"],
   },
   {
     company: "IMIC Technology",
@@ -33,14 +32,16 @@ export const experiences: Experience[] = [
   },
   {
     company: "ITR VN",
-    role: "Hardware Part-time",
+    role: "Kỹ thuật viên phần cứng (Part-time)",
     start: "01/2025",
     end: "09/2025",
     location: "TP. Hồ Chí Minh",
     highlights: [
-      "Lắp ráp và kiểm tra chức năng thiết bị y tế trước khi bàn giao.",
+      "Lắp ráp thiết bị y tế theo quy trình và kiểm tra chức năng từng máy trước khi bàn giao.",
+      "Làm việc trong môi trường thiết bị y tế, nơi mỗi máy phải đạt đúng tiêu chí kiểm tra mới được xuất xưởng — rèn thói quen bám quy trình và ghi nhận kết quả đo.",
+      "Phát hiện và xử lý lỗi lắp ráp phát sinh trong quá trình sản xuất.",
     ],
-    tech: ["Thiết bị y tế", "Kiểm thử phần cứng"],
+    tech: ["Thiết bị y tế", "Lắp ráp theo quy trình", "Kiểm tra chức năng"],
   },
   {
     company: "Công ty Cổ phần Khoa học Kỹ thuật Phương Hải",
@@ -49,7 +50,7 @@ export const experiences: Experience[] = [
     end: "08/2024",
     location: "TP. Hồ Chí Minh",
     highlights: [
-      "Hàn mạch điện tử, kiểm tra và debug bo mạch trước khi xuất xưởng.",
+      "Hàn mạch điện tử theo lô, đo kiểm và debug bo mạch trước khi xuất xưởng.",
     ],
     tech: ["Hàn mạch", "Debug bo mạch"],
   },
