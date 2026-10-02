@@ -8,7 +8,7 @@ export const profile: Profile = {
   location: "Nhà Bè, TP. Hồ Chí Minh",
   email: "minhchinh290@gmail.com",
   avatar: "/avatar.jpg",
-  cvUrl: "/cv.pdf",
+  cvUrl: "/Do_Minh_Chinh_CV.pdf",
   socials: [{ label: "GitHub", href: "https://github.com/DomainJin" }],
   website: "https://portfolio.domainjin.io.vn",
 };

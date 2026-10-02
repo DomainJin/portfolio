@@ -29,6 +29,7 @@ export type Project = {
   period: string;
   image?: string;
   videos?: { src: string; poster: string; portrait?: boolean }[];
+  images?: string[];
   tech: string[];
   links: { demo?: string; source?: string };
   featured?: boolean;

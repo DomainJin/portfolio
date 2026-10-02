@@ -67,7 +67,7 @@
   <dt>Điều khiển</dt><dd>PID + feedforward, ISR, PWM, ADC, encoder, động học omni/mecanum, IMU, van solenoid</dd>
   <dt>Độ tin cậy</dt><dd>OTA dual-partition, task watchdog, unit test (Unity), test trên phần cứng thật, tối ưu RAM/Flash</dd>
   <dt>Phần cứng / PCB</dt><dd>EasyEDA (schematic, layout, DRC, 3D), đọc datasheet, opto cách ly,
-      mạch nguồn, phân tách analog – power – digital, hàn mạch, đo kiểm &amp; debug bo mạch; Rhino 3D (xuất file CNC/laser)</dd>
+      mạch nguồn, phân tách analog – power – digital, hàn reflow, đo bằng oscilloscope &amp; đồng hồ đo, truy lỗi bo mạch; Rhino 3D (xuất file CNC/laser)</dd>
   <dt>Xử lý tín hiệu / AI</dt><dd>OpenCV, YOLO (Ultralytics), TensorFlow</dd>
   <dt>Công cụ</dt><dd>Git / GitHub, Docker, PyQt6, React, Node.js</dd>
 </dl>
@@ -88,6 +88,7 @@
         mecanum 4 bánh, MPU6050 và QMC5883L qua I2C, nhận lệnh UDP/OSC.</li>
     <li>Thiết kế schematic &amp; PCB trên EasyEDA: bo chủ ESP32 có opto cách ly, bo Robot Mecanum 5 kênh động cơ
         có encoder, loạt bo LED driver PT4115.</li>
+    <li>Lắp ráp bo bằng lò reflow, kiểm tra chức năng theo lô, dùng oscilloscope đo dạng sóng và thời gian cạnh để truy lỗi bo chạy sai.</li>
     <li>Dựng khung cơ khí trên Rhino, xuất file gia công CNC / laser; phát triển phần mềm sự kiện (check-in, quay số).</li>
   </ul>
 </div>

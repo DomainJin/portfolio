@@ -25,7 +25,7 @@ Kiểu dữ liệu định nghĩa ở `src/data/types.ts`.
 ## Asset cần thay trong `public/`
 
 - `avatar.jpg` → ảnh chân dung (gốc ở `asset/personal/avatar.png`).
-- `cv.pdf` → hiện là bản CV cũ, cần thay bằng CV mới.
+- `Do_Minh_Chinh_CV.pdf` → bản CV xuất từ `cv/cv.html`.
 - `certificates/iot-imic.pdf` → đã gỡ bản 39MB; cần thêm bản nén (<2MB) hoặc ảnh JPG.
 - `videos/` → video demo đã nén (H.264, không tiếng). Giữ mỗi file dưới ~10MB.
 - `projects/placeholder.svg` → ảnh từng dự án (tỷ lệ 16:9, ≥1200px).

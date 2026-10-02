@@ -53,6 +53,22 @@ export default async function ProjectPage({ params }: Params) {
         />
       )}
 
+      {project.images && project.images.length > 0 && (
+        <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3">
+          {project.images.map((src) => (
+            <a key={src} href={src} target="_blank" rel="noreferrer noopener">
+              <Image
+                src={src}
+                alt={project.name}
+                width={1400}
+                height={1050}
+                className="aspect-[4/3] w-full rounded-lg border border-border object-cover transition-opacity hover:opacity-80"
+              />
+            </a>
+          ))}
+        </div>
+      )}
+
       {project.videos && (
         <div
           className={`mt-6 grid gap-4 ${

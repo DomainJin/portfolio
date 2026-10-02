@@ -13,6 +13,7 @@ export const experiences: Experience[] = [
       "Viết firmware robot trưng bày Single Cube: đọc encoder bằng ISR, PID có feedforward, động học omni 3 bánh / mecanum 4 bánh, IMU và la bàn qua I2C, điều khiển qua UDP/OSC.",
       "Thiết kế schematic và PCB trên EasyEDA: bo chủ ESP32 có opto cách ly cho Cube, bo điều khiển Robot Mecanum 5 kênh động cơ, loạt bo LED dùng driver PT4115.",
       "Dựng khung cơ khí trên Rhino và xuất file gia công CNC / laser cho sản phẩm.",
+      "Lắp ráp bo mạch bằng lò reflow, kiểm tra chức năng theo lô và dùng oscilloscope đo dạng sóng để truy lỗi bo chạy sai.",
       "Phát triển phần mềm cho sự kiện: hệ thống check-in quét mã, quay số trúng thưởng, game đua vịt.",
     ],
     tech: ["ESP32", "C/C++", "SPI", "I2C", "PID", "OTA", "EasyEDA", "Rhino", "Python", "TypeScript"],
